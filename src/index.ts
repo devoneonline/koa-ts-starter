@@ -18,9 +18,11 @@ app.use(bodyParser());
 
 // Routes
 /**
- * Equivalent zu app.use("/", (ctx: BaseContext) => {ctx.body = "Hello World"})
+ * Equivalent zu app.get("/", (ctx: BaseContext) => {ctx.body = "Hello World"})
  */
 app.use(helloRoutes(router).routes()).use(router.allowedMethods())
+
+// Swagger setup
 router.swagger({
     title: "node-typescript-koa-rest",
     description: "API REST using NodeJS and KOA framework, typescript. TypeORM for SQL with class-validators. Middlewares JWT, CORS, Winston Logger.",
